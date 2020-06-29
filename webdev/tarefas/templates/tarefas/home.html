@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Taregas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h1 class="mt-5">Lista de Tarefas</h1>
+
+            <form action="{% url 'tarefas:home' %}" method="post">
+                {% csrf_token %}
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Descreva sua tarefa"
+                           aria-label="Descreva sua tarefa" aria-describedby="button-addon2" name="nome">
+
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-primary"  id="button-addon2">Salvar</button>
+                    </div>
+
+                </div>
+                <small  class="form-text text-muted">{{ form.nome.errors }}</small>
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
